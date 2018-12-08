@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_inv_tree" model="ir.ui.view">
+            <field name="name">inventory.inv.tree</field>
+            <field name="model">inventory.inv</field>
+            <field name="arch" type="xml">
+                <tree string="仓库列表">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_inv" model="ir.actions.act_window">
+            <field name="name">仓库</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inventory.inv</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_inv_tree"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
